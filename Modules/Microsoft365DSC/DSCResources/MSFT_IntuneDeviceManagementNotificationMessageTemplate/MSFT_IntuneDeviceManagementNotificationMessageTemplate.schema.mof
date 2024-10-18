@@ -1,0 +1,19 @@
+
+[ClassVersion("1.0.0.0"), FriendlyName("IntuneDeviceManagementNotificationMessageTemplate")]
+class MSFT_IntuneDeviceManagementNotificationMessageTemplate : OMI_BaseResource
+{
+    [Write, Description("The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink, includeDeviceDetails, unknownFutureValue."), ValueMap{"none","includeCompanyLogo","includeCompanyName","includeContactInformation","includeCompanyPortalLink","includeDeviceDetails","unknownFutureValue"}, Values{"none","includeCompanyLogo","includeCompanyName","includeContactInformation","includeCompanyPortalLink","includeDeviceDetails","unknownFutureValue"}] String BrandingOptions;
+    [Write, Description("The default locale to fallback onto when the requested locale is not available.")] String DefaultLocale;
+    [Write, Description("Display name for the Notification Message Template.")] String Description;
+    [Required, Description("Display name for the Notification Message Template.")] String DisplayName;
+    [Write, Description("List of Scope Tags for this Entity instance.")] String RoleScopeTagIds[];
+    [Key, Description("The unique identifier for an entity. Read-only.")] String Id;
+    [Write, Description("Present ensures the policy exists, absent ensures it is removed."), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] string Ensure;
+    [Write, Description("Credentials of the Admin"), EmbeddedInstance("MSFT_Credential")] string Credential;
+    [Write, Description("Id of the Azure Active Directory application to authenticate with.")] String ApplicationId;
+    [Write, Description("Id of the Azure Active Directory tenant used for authentication.")] String TenantId;
+    [Write, Description("Secret of the Azure Active Directory tenant used for authentication."), EmbeddedInstance("MSFT_Credential")] String ApplicationSecret;
+    [Write, Description("Thumbprint of the Azure Active Directory application's authentication certificate to use for authentication.")] String CertificateThumbprint;
+    [Write, Description("Managed ID being used for authentication.")] Boolean ManagedIdentity;
+    [Write, Description("Access token used for authentication.")] String AccessTokens[];
+};

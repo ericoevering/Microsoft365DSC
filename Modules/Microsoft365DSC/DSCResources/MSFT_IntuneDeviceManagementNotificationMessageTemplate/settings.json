@@ -1,0 +1,25 @@
+{
+    "resourceName": "IntuneDeviceManagementNotificationMessageTemplate",
+    "description": "This resource configures an Intune Device Management Notification Message Template.",
+    "permissions":    {
+  "graph": {
+    "delegated": {
+      "update": [],
+      "read": [
+        {
+          "name": "DeviceManagementServiceConfig.Read.All"
+        }
+      ]
+    },
+    "application": {
+      "update": [],
+      "read": [
+        {
+          "name": "DeviceManagementServiceConfig.Read.All"
+        }
+      ]
+    }
+  }
+}
+
+}
